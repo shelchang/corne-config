@@ -28,6 +28,13 @@
             tapping-term-ms = <200>;
             flavor = "balanced";
         };
+
+        capslock: capslock {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CAPSLOCK";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_SHIFT>, <&caps_word>;
+        };
     };
 
     keymap {
@@ -44,7 +51,7 @@
             bindings = <
 &kp TAB       &kp SQT        &kp COMMA  &kp PERIOD  &kp P      &kp Y    &kp F  &kp G      &kp C      &kp R  &kp L  &holdtap LC(BSPC) BACKSPACE
 &kp LEFT_ALT  &kp A          &kp O      &kp E       &kp U      &kp I    &kp D  &kp H      &kp T      &kp N  &kp S  &kp MINUS
-&kp LSHFT     &kp SEMICOLON  &kp Q      &kp J       &kp K      &kp X    &kp B  &kp M      &kp W      &kp V  &kp Z  &kp SLASH
+&capslock     &kp SEMICOLON  &kp Q      &kp J       &kp K      &kp X    &kp B  &kp M      &kp W      &kp V  &kp Z  &kp SLASH
                                         &kp LGUI    &kp LCTRL  &mo 1    &mo 2  &kp SPACE  &kp ENTER
             >;
         };
@@ -58,10 +65,10 @@
 
             display-name = "Lower";
             bindings = <
-&kp GRAVE   &kp N1        &kp N2        &kp N3        &kp N4        &kp N5             &kp N6  &kp N7           &kp N8           &kp N9           &kp N0     &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4       &trans  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS  &kp EQUAL
-&kp LSHFT   &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp PRINTSCREEN    &trans  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp SLASH  &kp KP_ENTER
-                                        &kp LGUI      &trans        &trans             &trans  &kp KP_NUMBER_0  &kp DOT
+&kp GRAVE     &kp N1     &kp N2     &kp N3     &kp N4     &kp N5             &kp N6  &kp N7           &kp N8           &kp N9           &kp N0     &kp BSPC
+&kp LEFT_ALT  &trans     &trans     &trans     &trans     &trans             &trans  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS  &kp EQUAL
+&kp LSHFT     &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp PRINTSCREEN    &trans  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp SLASH  &kp KP_ENTER
+                                    &trans     &trans     &trans             &trans  &kp KP_NUMBER_0  &kp DOT
             >;
         };
 
